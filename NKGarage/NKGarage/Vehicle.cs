@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NKGarage
 {
-   public class Vehicle
+    class Vehicle
     {
         public Vehicle()
         {
