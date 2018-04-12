@@ -35,9 +35,10 @@ namespace NKGarage
             Console.ReadLine();
         }
 
-        public void FixG()
+        public void FixedGarage()
         {
-
+            Garage<Vehicle> g = new Garage<Vehicle>(50);
+            
         }
     }
 }
