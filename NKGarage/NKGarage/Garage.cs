@@ -22,7 +22,7 @@ namespace NKGarage
 
         }
 
-        public void Leave(T input)
+        public void Add(T input)
         {
             if (cap > count)
             {
