@@ -21,7 +21,7 @@ namespace NKGarage
         public int RegistrationNumber { get; set; }
         public string Color { get; set; }
         public int NrofWheels { get; set; }
-        public int Doors { get; set; }
+        public int Doors { get; set; } 
         public string Brand { get; set; }
 
     }
