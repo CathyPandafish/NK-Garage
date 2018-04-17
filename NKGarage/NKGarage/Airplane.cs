@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace NKGarage
 {
-    public class Airplane : Vehicle
+    public class  Airplane : Vehicle
     {
-        public Airplane(int registrationNumber, string color, int nrOfWheels, int doors, string brand, int manaCap) : base(registrationNumber, color, nrOfWheels, doors, brand)
+        public Airplane(string registrationNumber, string color, int nrOfEngines ) : base(registrationNumber, color)
         {
-            ManaCap = manaCap;
+            NrOfEngines = nrOfEngines;
         }
 
-        public int ManaCap { get; set; }
+        public int NrOfEngines { get; set; }
     }
 } 
