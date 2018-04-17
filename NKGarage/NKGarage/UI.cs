@@ -16,6 +16,7 @@ namespace NKGarage
             bool keepRunning = true;
             while (keepRunning)
             {
+                Console.Clear();
                 Console.WriteLine("Please enter your option");
                 Console.WriteLine("1) Creat your Garage");
                 Console.WriteLine("2) Park");
@@ -32,24 +33,21 @@ namespace NKGarage
                         break;
                     case "2": Park();
                         break;
-                    case "3":
+                    case "3": Unpark();
                         break;
-                    case "4":
+                    case "4": AllVehicles();
                         break;
-
-                    case "0":
-                        keepRunning = false;
+                    case "5": TypeOfVehicles();
                         break;
-                    default:
-                        Console.WriteLine("Invalid input");
+                    case "0": keepRunning = false;
+                        break;
+                    default: Console.WriteLine("Invalid input");
                         break;
                 }
                 Console.Write("\n <PRESS ANY BUTTON TO CONTINUE>");
                 Console.ReadLine();
             }
-
         }
-
 
         public void CreateGarage()
         {
@@ -74,28 +72,56 @@ namespace NKGarage
             {
                 Console.WriteLine("Registeration Number: ");
                 string regNr = Console.ReadLine();
-                Console.WriteLine(" Color: ");
+                Console.WriteLine("Color: ");
                 string color = Console.ReadLine();
                 Console.WriteLine("Number of Engine: ");
                 string nrOfEngineasString = Console.ReadLine();
                 int nrOfEngine;
                 int.TryParse(nrOfEngineasString, out nrOfEngine);
 
-                Airplane airplane = new Airplane(regNr, color, nrOfEngine);
+                //Airplane airplane = new Airplane(regNr, color, nrOfEngine);
                 g.Add(new Airplane(regNr, color, nrOfEngine));
             }
 
             if (opt == 2)
             {
+                Console.WriteLine("Registeration Number: ");
+                string regNr = Console.ReadLine();
+                Console.WriteLine("Color: ");
+                string color = Console.ReadLine();
+                Console.WriteLine("Number of Engine: ");
+                
+                int nrOfSeats = int.Parse(Console.ReadLine());
+                g.Add(new Bus(regNr, color, nrOfSeats));
             }
 
 
             Console.ReadLine();
         }
 
-        public void AllList()
+        public void AllVehicles()
         {
+            foreach (var v in g)
+            {
+                Console.WriteLine(v.RegistrationNumber +" "+ v.Color);
+            }
+        }
+        public void TypeOfVehicles()
+        {
+            foreach (Vehicle t in g)
+            {
+                Console.WriteLine(t.GetType().Name);
+            }
+        }
 
+        public void Unpark()
+        {
+            Console.WriteLine("Registeration Number of your vehicle: ");
+            string input = Console.ReadLine();
+            foreach (Vehicle t in g.Where(x=> x.RegistrationNumber=="input"))
+            {
+                
+            }
         }
     }
 }
