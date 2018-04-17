@@ -8,21 +8,19 @@ namespace NKGarage
 {
     public class Vehicle
     {
-        public Vehicle(int registrationNumber, string color , int nrOfWheels, int doors, string brand)
+        
+
+        public Vehicle(string registrationNumber, string color)
         {
             RegistrationNumber = registrationNumber;
             Color = color;
-            NrofWheels = nrOfWheels;
-            Doors = doors;
-            Brand = brand;
+           
 
         }
 
-        public int RegistrationNumber { get; set; }
+        public string RegistrationNumber { get; set; }
         public string Color { get; set; }
-        public int NrofWheels { get; set; }
-        public int Doors { get; set; }
-        public string Brand { get; set; }
+        
 
     }
 }

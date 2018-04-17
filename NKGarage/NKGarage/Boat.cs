@@ -8,7 +8,7 @@ namespace NKGarage
 {
     public class Boat : Vehicle
     {
-        public Boat(int registrationNumber, string color, int nrOfWheels, int doors, string brand , string fuelType) : base(registrationNumber, color, nrOfWheels, doors, brand)
+        public Boat(string registrationNumber, string color, string fuelType) : base(registrationNumber, color)
         {
             FuelType = fuelType;
         }

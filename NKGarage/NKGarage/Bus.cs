@@ -8,7 +8,7 @@ namespace NKGarage
 {
     public class Bus : Vehicle
     {
-        public Bus(int registrationNumber, string color, int nrOfWheels, int doors, string brand , int nrOfSeats) : base(registrationNumber, color, nrOfWheels, doors, brand)
+        public Bus(string registrationNumber, string color, int nrOfSeats) : base(registrationNumber, color)
         {
             NrOfSeats = nrOfSeats;
                 
