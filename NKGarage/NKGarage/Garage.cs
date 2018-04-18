@@ -11,33 +11,38 @@ namespace NKGarage
     {
 
 
-        private T[] Vihecle;
-        int cap, count;
+        private List<T> vehicles;
+        int cap;
 
         public Garage(int capacity)
         {
             cap = capacity;
-            count = 0;
-            Vihecle = new T[capacity];
+            
+            vehicles = new List<T>();
 
         }
 
-        public void Add(T input)
+        public void Park(T vehicle)
         {
-            if (cap > count)
+            if (cap > vehicles.Count )
             {
-                Vihecle[count] = input;
-                count += 1;
+                vehicles.Add(vehicle);
+              
             }
-
+        }
+        public void Unpark(T vehicle)
+        {
+          
+                vehicles.Remove(vehicle);
+            
         }
 
 
         public IEnumerator<T> GetEnumerator()
         {
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < vehicles.Count; i++)
             {
-                yield return Vihecle[i];
+                yield return vehicles[i];
             }
         }
 
