@@ -14,8 +14,6 @@ namespace NKGarage
         {
             RegistrationNumber = registrationNumber;
             Color = color;
-           
-
         }
 
         public string RegistrationNumber { get; set; }

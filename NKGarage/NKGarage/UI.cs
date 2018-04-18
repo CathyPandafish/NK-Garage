@@ -80,9 +80,7 @@ namespace NKGarage
                 Console.WriteLine("Number of Engine: ");
                 string nrOfEngineasString = Console.ReadLine();
                 int nrOfEngine;
-                int.TryParse(nrOfEngineasString, out nrOfEngine);
-
-                //Airplane airplane = new Airplane(regNr, color, nrOfEngine);
+                int.TryParse(nrOfEngineasString, out nrOfEngine);      
                 garage.Park(new Airplane(regNr, color, nrOfEngine));
             }
 
@@ -101,35 +99,34 @@ namespace NKGarage
             {
                 Console.WriteLine("Registeration Number: ");
                 string regNr = Console.ReadLine();
-                Console.WriteLine(" Color: ");
+                Console.WriteLine("Color: ");
                 string color = Console.ReadLine();
                 Console.WriteLine("Brand: ");    
                 string brand = Console.ReadLine();
-                g.Add(new Car(regNr, color, brand));
-
+                garage.Park(new Car(regNr, color, brand));
             }
 
             if (opt == 4)
             {
                 Console.WriteLine("Registeration Number: ");
                 string regNr = Console.ReadLine();
-                Console.WriteLine(" Color: ");
+                Console.WriteLine("Color: ");
                 string color = Console.ReadLine();
                 Console.WriteLine("FuelType : ");
                 string fuelType = Console.ReadLine();
-                g.Add(new Boat(regNr, color, fuelType));
+                garage.Park(new Boat(regNr, color, fuelType));
             }
 
             if (opt == 5)
             {
                 Console.WriteLine("Registeration Number: ");
                 string regNr = Console.ReadLine();
-                Console.WriteLine(" Color: ");
+                Console.WriteLine("Color: ");
                 string color = Console.ReadLine();
                 Console.WriteLine("Model: ");
                 string model = Console.ReadLine();
 
-                g.Add(new Motorcycle(regNr, color, model));
+                garage.Park(new Motorcycle(regNr, color, model));
                 Console.ReadLine();
             }
         }

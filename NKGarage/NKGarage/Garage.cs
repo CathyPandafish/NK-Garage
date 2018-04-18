@@ -19,7 +19,6 @@ namespace NKGarage
             cap = capacity;
             
             vehicles = new List<T>();
-
         }
 
         public void Park(T vehicle)
