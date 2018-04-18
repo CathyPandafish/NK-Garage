@@ -89,14 +89,46 @@ namespace NKGarage
                 string regNr = Console.ReadLine();
                 Console.WriteLine("Color: ");
                 string color = Console.ReadLine();
-                Console.WriteLine("Number of Engine: ");
-                
+                Console.WriteLine("Number of seats: "); 
                 int nrOfSeats = int.Parse(Console.ReadLine());
                 g.Add(new Bus(regNr, color, nrOfSeats));
             }
 
+            if (opt == 3)
+            {
+                Console.WriteLine("Registeration Number: ");
+                string regNr = Console.ReadLine();
+                Console.WriteLine(" Color: ");
+                string color = Console.ReadLine();
+                Console.WriteLine("Brand: ");    
+                string brand = Console.ReadLine();
+                g.Add(new Car(regNr, color, brand));
 
-            Console.ReadLine();
+            }
+
+            if (opt == 4)
+            {
+                Console.WriteLine("Registeration Number: ");
+                string regNr = Console.ReadLine();
+                Console.WriteLine(" Color: ");
+                string color = Console.ReadLine();
+                Console.WriteLine("FuelType : ");
+                string fuelType = Console.ReadLine();
+                g.Add(new Boat(regNr, color, fuelType));
+            }
+
+            if (opt == 5)
+            {
+                Console.WriteLine("Registeration Number: ");
+                string regNr = Console.ReadLine();
+                Console.WriteLine(" Color: ");
+                string color = Console.ReadLine();
+                Console.WriteLine("Model: ");
+                string model = Console.ReadLine();
+
+                g.Add(new Motorcycle(regNr, color, model));
+                Console.ReadLine();
+            }
         }
 
         public void AllVehicles()
