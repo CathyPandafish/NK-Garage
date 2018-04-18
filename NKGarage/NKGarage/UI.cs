@@ -8,7 +8,7 @@ namespace NKGarage
 {
     public class UI
     {
-        Garage<Vehicle> g;
+        Garage<Vehicle> garage;
         public void MainMenu()
         {
             
@@ -23,6 +23,7 @@ namespace NKGarage
                 Console.WriteLine("3) Unpark");
                 Console.WriteLine("4) Print out all parked cars in garage");
                 Console.WriteLine("5) Print out parked vehicle types in garage");
+                Console.WriteLine("6) Find my vehicle");
                 Console.WriteLine("0) quit");
 
                 string input = Console.ReadLine();
@@ -39,6 +40,8 @@ namespace NKGarage
                         break;
                     case "5": TypeOfVehicles();
                         break;
+                    case "6": FindVehicle();
+                        break;
                     case "0": keepRunning = false;
                         break;
                     default: Console.WriteLine("Invalid input");
@@ -53,7 +56,7 @@ namespace NKGarage
         {
             Console.WriteLine("How many parking spots in a garage do you want to create? ");
             int number = int.Parse(Console.ReadLine());
-            g = new Garage<Vehicle>(number);
+            garage = new Garage<Vehicle>(number);
         }
 
         public void Park()
@@ -80,7 +83,7 @@ namespace NKGarage
                 int.TryParse(nrOfEngineasString, out nrOfEngine);
 
                 //Airplane airplane = new Airplane(regNr, color, nrOfEngine);
-                g.Add(new Airplane(regNr, color, nrOfEngine));
+                garage.Park(new Airplane(regNr, color, nrOfEngine));
             }
 
             if (opt == 2)
@@ -92,7 +95,7 @@ namespace NKGarage
                 Console.WriteLine("Number of Engine: ");
                 
                 int nrOfSeats = int.Parse(Console.ReadLine());
-                g.Add(new Bus(regNr, color, nrOfSeats));
+                garage.Park(new Bus(regNr, color, nrOfSeats));
             }
 
 
@@ -101,14 +104,14 @@ namespace NKGarage
 
         public void AllVehicles()
         {
-            foreach (var v in g)
+            foreach (var v in garage)
             {
                 Console.WriteLine(v.RegistrationNumber +" "+ v.Color);
             }
         }
         public void TypeOfVehicles()
         {
-            foreach (Vehicle t in g)
+            foreach (Vehicle t in garage)
             {
                 Console.WriteLine(t.GetType().Name);
             }
@@ -118,9 +121,18 @@ namespace NKGarage
         {
             Console.WriteLine("Registeration Number of your vehicle: ");
             string input = Console.ReadLine();
-            foreach (Vehicle t in g.Where(x=> x.RegistrationNumber=="input"))
+            foreach (Vehicle vehicle in garage.Where(x=> x.RegistrationNumber==input))
             {
-                
+                garage.Unpark(vehicle);
+            }
+        }
+        public void FindVehicle()
+        {
+            Console.WriteLine("Enter one of your vehicle´s property: ");
+            string property = Console.ReadLine();
+            foreach (Vehicle vehicle in garage.Where(x => x.RegistrationNumber == property || x.Color == property))
+            {
+                Console.WriteLine(vehicle.RegistrationNumber + " " + vehicle.Color);
             }
         }
     }
