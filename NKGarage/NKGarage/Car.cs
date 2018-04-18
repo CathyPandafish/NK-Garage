@@ -8,10 +8,11 @@ namespace NKGarage
 {
     public class Car : Vehicle
     {
-        public Car(string registrationNumber, string color, bool sportCar) : base(registrationNumber, color)
+        public Car(string registrationNumber, string color, string sportCar) : base(registrationNumber, color)
         {
             SportCar = sportCar;
+        
         }
-        public bool SportCar { get; set; }
+        public string  SportCar { get; set; }
     }
 }

@@ -47,5 +47,13 @@ namespace NKGarage
 
             return GetEnumerator();
         }
+
+        //public void Remove (string input)
+        //{
+        //    for (int i = 0; i < Vehicle.count; i++)
+        //    {
+        //        if (Vehicle.count() -1);
+        //    }
+        }
     }
-}
+
